@@ -33,7 +33,7 @@ python -m pip install PyPDF2 pdf2image pillow pytesseract openai python-dotenv t
 
 ### 4. Instalar Poppler (para pdf2image)
 Descarga Poppler para Windows:
-👉 https://github.com/oschwartz10612/poppler-windows/releases (github.com in Bing)
+👉 https://github.com/oschwartz10612/poppler-windows/releases
 
 Extrae en C:\Program Files\poppler-xx\bin
 
@@ -57,12 +57,14 @@ Configura la variable de entorno:
 
 Prueba idiomas disponibles:
 
-tesseract --list-langs
-🔑 Configuración de API Key
-Crea un archivo .env en la raíz del proyecto:
-OPENAI_API_KEY=tu_api_key_aqui
+`tesseract --list-langs`
 
-📂 Estructura del proyecto
+### 🔑 Configuración de API Key
+Crear un archivo .env en la raíz del proyecto:
+
+OPENAI_API_KEY=api_key_aqui
+
+### 📂 Estructura del proyecto
 
 document_classifier/
 │
@@ -74,7 +76,8 @@ document_classifier/
 ├── test_ocr.py          # Script de prueba OCR
 ├── requirements.txt     # Dependencias
 └── .env                 # API Key
-🧪 Script de prueba OCR (test_ocr.py)
+
+### 🧪 Script de prueba OCR (test_ocr.py)
 
 `import os
 import pytesseract
@@ -88,8 +91,10 @@ texto = pytesseract.image_to_string(img, lang="eng")
 
 print("Texto extraído por OCR:")
 print(texto.strip() if texto.strip() else "⚠️ No se detectó texto en la imagen")
-🧠 Código principal (main.py)
 
+###🧠 Código principal (main.py)
+
+```python
 import os
 import json
 import datetime
@@ -166,13 +171,16 @@ def main():
 
 if __name__ == "__main__":
     main()`
+```
 
 ▶️ Ejecución
 Con el entorno virtual activado:
 `python main.py`
 
 salida
+```python
 `{"fecha": "2026-02-01 10:34:17", "documento": "contrato-2020-2021.pdf", "resultado": "```json\n{\n  \"fecha\": \"2021-03-12\",\n  \"documento\": \"Certificación de servicios\",\n  \"clasificacion\": \"Contrato\",\n  \"justificacion\": \"El documento certifica la prestación de servicios de una persona bajo una orden de servicio específica, detallando el objeto, plazo de ejecución y valor del contrato, lo cual es característico de un contrato.\"\n}\n```"}`
+```
 
 📌 Notas importantes
 Siempre activa el entorno virtual antes de instalar dependencias o ejecutar el proyecto.
