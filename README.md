@@ -40,24 +40,32 @@ Extrae en C:\Program Files\poppler-xx\bin
 Agrega esa ruta al PATH del sistema.
 
 Prueba:
+```python
 `pdftoppm -h`
+```
 
 ### 5. Instalar Tesseract OCR
 Descarga Tesseract para Windows:
-👉 https://github.com/UB-Mannheim/tesseract/wiki (github.com in Bing)
+👉 https://github.com/UB-Mannheim/tesseract/wiki
 
 Instálalo en:
 C:\Program Files\Tesseract-OCR\
 Verificar:
 
+```python
 `tesseract --version`
+```
 
 Configura la variable de entorno:
+```python
 `setx TESSDATA_PREFIX "C:\Program Files\Tesseract-OCR\tessdata"`
+```
 
 Prueba idiomas disponibles:
 
+```python
 `tesseract --list-langs`
+```
 
 ### 🔑 Configuración de API Key
 Crear un archivo .env en la raíz del proyecto:
@@ -79,7 +87,8 @@ document_classifier/
 
 ### 🧪 Script de prueba OCR (test_ocr.py)
 
-`import os
+```python
+import os
 import pytesseract
 from PIL import Image
 
@@ -92,6 +101,7 @@ texto = pytesseract.image_to_string(img, lang="eng")
 print("Texto extraído por OCR:")
 print(texto.strip() if texto.strip() else "⚠️ No se detectó texto en la imagen")
 
+```
 ###🧠 Código principal (main.py)
 
 ```python
@@ -175,14 +185,17 @@ if __name__ == "__main__":
 
 ▶️ Ejecución
 Con el entorno virtual activado:
+```python
 `python main.py`
+```
 
-salida
+Salida
+
 ```python
 `{"fecha": "2026-02-01 10:34:17", "documento": "contrato-2020-2021.pdf", "resultado": "```json\n{\n  \"fecha\": \"2021-03-12\",\n  \"documento\": \"Certificación de servicios\",\n  \"clasificacion\": \"Contrato\",\n  \"justificacion\": \"El documento certifica la prestación de servicios de una persona bajo una orden de servicio específica, detallando el objeto, plazo de ejecución y valor del contrato, lo cual es característico de un contrato.\"\n}\n```"}`
 ```
 
-📌 Notas importantes
+### 📌 Notas importantes
 Siempre activa el entorno virtual antes de instalar dependencias o ejecutar el proyecto.
 
 Usa python -m pip install ... para asegurarte de que las librerías se instalan dentro de .venv.
@@ -191,5 +204,6 @@ Configura correctamente TESSDATA_PREFIX para que Tesseract encuentre los idiomas
 
 Si quieres soporte en español, agrega spa.traineddata en la carpeta tessdata y usa lang="spa" en pytesseract.
 
-🏆 Contribuciones
-Este proyecto fue desarrollado paso a paso, resolviendo problemas de entorno en Windows, configurando OCR y migrando a la nueva API de OpenAI
+### 🏆 Contribuciones
+Este proyecto fue desarrollado paso a paso, resolviendo problemas de entorno en Windows, configurando OCR y migrando a la nueva API de OpenAI. 
+La segunda vearsión se realizará en un entorno Linux.
