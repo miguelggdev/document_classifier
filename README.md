@@ -40,7 +40,7 @@ Extrae en C:\Program Files\poppler-xx\bin
 Agrega esa ruta al PATH del sistema.
 
 Prueba:
-pdftoppm -h
+`pdftoppm -h`
 
 ### 5. Instalar Tesseract OCR
 Descarga Tesseract para Windows:
@@ -50,10 +50,10 @@ Instálalo en:
 C:\Program Files\Tesseract-OCR\
 Verificar:
 
-tesseract --version
+`tesseract --version`
 
 Configura la variable de entorno:
-setx TESSDATA_PREFIX "C:\Program Files\Tesseract-OCR\tessdata"
+`setx TESSDATA_PREFIX "C:\Program Files\Tesseract-OCR\tessdata"`
 
 Prueba idiomas disponibles:
 
