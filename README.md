@@ -20,14 +20,16 @@ Verifica con:
 python --version
 ```
 ### 2. Crear entorno virtual
-python -m venv .venv
-.venv\Scripts\activate
+`python -m venv .venv
+.venv\Scripts\activate`
 
 ### 3. Instalar dependencias
 Con el entorno virtual activado:
 
+```python
 python -m pip install --upgrade pip
 python -m pip install PyPDF2 pdf2image pillow pytesseract openai python-dotenv tqdm
+```
 
 ### 4. Instalar Poppler (para pdf2image)
 Descarga Poppler para Windows:
