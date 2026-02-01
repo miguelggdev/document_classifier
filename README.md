@@ -102,7 +102,7 @@ print("Texto extraído por OCR:")
 print(texto.strip() if texto.strip() else "⚠️ No se detectó texto en la imagen")
 
 ```
-###🧠 Código principal (main.py)
+### 🧠 Código principal (main.py)
 
 ```python
 import os
@@ -207,3 +207,39 @@ Si quieres soporte en español, agrega spa.traineddata en la carpeta tessdata y 
 ### 🏆 Contribuciones
 Este proyecto fue desarrollado paso a paso, resolviendo problemas de entorno en Windows, configurando OCR y migrando a la nueva API de OpenAI. 
 La segunda vearsión se realizará en un entorno Linux.
+
+### 📌 Recursos utilizados
+Python  
+👉 https://www.python.org/downloads/
+
+PyPDF2 (extracción de texto digital en PDFs)  
+👉 https://pypi.org/project/PyPDF2/
+
+pdf2image (conversión de PDF a imágenes)  
+👉 https://pypi.org/project/pdf2image/
+
+Pillow (procesamiento de imágenes)  
+👉 https://pypi.org/project/Pillow/
+
+pytesseract (OCR con Tesseract)  
+👉 https://pypi.org/project/pytesseract/ (pypi.org in Bing)
+
+Tesseract OCR para Windows (UB Mannheim build)  
+👉 https://github.com/UB-Mannheim/tesseract/wiki (github.com in Bing)
+
+Modelos de idiomas para Tesseract (tessdata)  
+👉 https://github.com/tesseract-ocr/tessdata (github.com in Bing)
+
+Poppler para Windows (necesario para pdf2image)  
+👉 https://github.com/oschwartz10612/poppler-windows/releases (github.com in Bing)
+
+OpenAI Python SDK (API GPT‑4o)  
+👉 https://pypi.org/project/openai/  
+👉 https://github.com/openai/openai-python
+
+python-dotenv (manejo de variables de entorno)  
+👉 https://pypi.org/project/python-dotenv/ (pypi.org in Bing)
+
+tqdm (barra de progreso opcional)  
+👉 https://pypi.org/project/tqdm/
+
